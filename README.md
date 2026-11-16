@@ -2,7 +2,7 @@
 
 Control de stock gratis para almacenes, kioscos, dietéticas y ferreterías de barrio. Se usa desde el celular o la compu del mostrador, **funciona sin internet** y no pide cuentas ni pagos.
 
-**[Probar Góndola →](https://TU-USUARIO.github.io/gondola/)** (tocá "Probar con un ejemplo" para ver un almacén con un mes de ventas)
+**[Probar Góndola →](https://fran951xd.github.io/GONDOLA/)** (tocá "Probar con un ejemplo" para ver un almacén con un mes de ventas)
 
 ![Panel del día](docs/hoy.png)
 
@@ -65,7 +65,7 @@ Góndola resuelve lo básico, rápido y bien: **vender, saber qué falta y pedir
 ## Cómo correrlo
 
 ```bash
-git clone https://github.com/TU-USUARIO/gondola.git
+git clone https://github.com/Fran951xD/gondola.git
 cd gondola
 npm run dev          # http://localhost:5173
 npm test             # tests unitarios (Node 22+)
@@ -99,6 +99,6 @@ Al publicar cambios, subí el número de `VERSION` en `sw.js` para que los dispo
 
 ## Autor
 
-**Tu Nombre** · [LinkedIn](https://linkedin.com/in/TU-USUARIO) · [GitHub](https://github.com/TU-USUARIO)
+**Fran951xD** · [LinkedIn](https://linkedin.com/in/Fran951xD) · [GitHub](https://github.com/Fran951xD)
 
 Código bajo licencia MIT.
