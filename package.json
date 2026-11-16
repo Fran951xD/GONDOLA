@@ -1,0 +1,14 @@
+{
+  "name": "gondola",
+  "version": "1.0.0",
+  "description": "Control de stock, caja y pedidos para negocios de barrio. Funciona sin internet.",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "python3 -m http.server 5173",
+    "test": "node --test \"tests/**/*.test.js\"",
+    "test:e2e": "python3 tests/e2e/flujos.py"
+  },
+  "engines": { "node": ">=22" },
+  "license": "MIT"
+}

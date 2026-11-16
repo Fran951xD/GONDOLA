@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Góndola · Control de stock para tu negocio</title>
+  <meta name="description" content="Control de stock gratis para almacenes, kioscos y negocios de barrio: caja rápida, alertas de reposición, pedidos por WhatsApp y ventas del día. Funciona sin internet.">
+  <meta name="theme-color" content="#1b6b4f">
+  <meta name="color-scheme" content="light">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="assets/icono.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/icono-192.png">
+  <link rel="preload" href="fonts/adventor-bold.woff" as="font" type="font/woff" crossorigin>
+  <link rel="preload" href="fonts/inter-regular.woff" as="font" type="font/woff" crossorigin>
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body class="cargando">
+  <a class="saltar" href="#vista">Ir al contenido</a>
+
+  <nav class="lateral" aria-label="Principal">
+    <div class="lateral__marca">
+      <a href="#/hoy" class="marca" aria-label="Góndola, inicio">góndola</a>
+      <p id="nombre-negocio" class="lateral__negocio"></p>
+    </div>
+    <ul class="lateral__lista">
+      <li><a href="#/hoy" data-nav="hoy"><svg class="icono" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M4 13h4v7H4zM10 9h4v11h-4zM16 4h4v16h-4z"/></svg>Hoy</a></li>
+      <li><a href="#/vender" data-nav="vender" class="lateral__vender"><svg class="icono" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M3 5h2l2.2 10.2a1 1 0 0 0 1 .8h8.6a1 1 0 0 0 1-.8L20 8H6.2M9 20.5a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1Zm8 0a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1Z"/></svg>Vender</a></li>
+      <li><a href="#/productos" data-nav="productos"><svg class="icono" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M4 7.5 12 4l8 3.5v9L12 20l-8-3.5v-9ZM4 7.5l8 3.5 8-3.5M12 11v9"/></svg>Productos</a></li>
+      <li><a href="#/reponer" data-nav="reponer"><svg class="icono" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M4 12a8 8 0 0 1 14-5.3M20 4v4h-4M20 12a8 8 0 0 1-14 5.3M4 20v-4h4"/></svg>Reponer<span class="insignia" data-insignia="reponer" hidden></span></a></li>
+      <li><a href="#/ventas" data-nav="ventas"><svg class="icono" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2V3Zm3 5h6m-6 4h6m-6 4h3"/></svg>Ventas</a></li>
+      <li><a href="#/ajustes" data-nav="ajustes"><svg class="icono" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm7.4-3a7.4 7.4 0 0 0-.1-1.2l2-1.6-2-3.4-2.4 1a7.6 7.6 0 0 0-2-1.2L14.5 3h-5l-.4 2.6a7.6 7.6 0 0 0-2 1.2l-2.4-1-2 3.4 2 1.6a7.4 7.4 0 0 0 0 2.4l-2 1.6 2 3.4 2.4-1a7.6 7.6 0 0 0 2 1.2l.4 2.6h5l.4-2.6a7.6 7.6 0 0 0 2-1.2l2.4 1 2-3.4-2-1.6c.1-.4.1-.8.1-1.2Z"/></svg>Ajustes</a></li>
+    </ul>
+    <p id="aviso-ejemplo" class="lateral__ejemplo" hidden>Estás usando un negocio de ejemplo. <a href="#/ajustes">Empezar con el tuyo</a></p>
+  </nav>
+
+  <main id="vista" class="vista" tabindex="-1"></main>
+
+  <!-- Navegación en el celular -->
+  <nav class="inferior" aria-label="Principal">
+    <a href="#/hoy" data-nav="hoy"><svg class="icono" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M4 13h4v7H4zM10 9h4v11h-4zM16 4h4v16h-4z"/></svg><span>Hoy</span></a>
+    <a href="#/productos" data-nav="productos"><svg class="icono" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M4 7.5 12 4l8 3.5v9L12 20l-8-3.5v-9ZM4 7.5l8 3.5 8-3.5M12 11v9"/></svg><span>Productos</span></a>
+    <a href="#/vender" data-nav="vender" class="inferior__vender"><svg class="icono" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M3 5h2l2.2 10.2a1 1 0 0 0 1 .8h8.6a1 1 0 0 0 1-.8L20 8H6.2M9 20.5a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1Zm8 0a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1Z"/></svg><span>Vender</span></a>
+    <a href="#/reponer" data-nav="reponer"><svg class="icono" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M4 12a8 8 0 0 1 14-5.3M20 4v4h-4M20 12a8 8 0 0 1-14 5.3M4 20v-4h4"/></svg><span>Reponer</span><span class="insignia" data-insignia="reponer" hidden></span></a>
+    <details class="inferior__mas" id="menu-mas">
+      <summary><svg class="icono" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M5 12h.01M12 12h.01M19 12h.01"/></svg><span>Más</span></summary>
+      <div class="inferior__menu">
+        <a href="#/ventas" data-nav="ventas">Ventas</a>
+        <a href="#/ajustes" data-nav="ajustes">Ajustes y copias</a>
+      </div>
+    </details>
+  </nav>
+
+  <div id="avisos" class="avisos" aria-live="polite"></div>
+  <noscript><p class="vacio">Góndola necesita JavaScript activado para funcionar.</p></noscript>
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
