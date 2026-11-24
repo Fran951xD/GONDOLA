@@ -93,8 +93,25 @@ export function textoDelPedido({ proveedor, items, negocio }) {
 
 /** Enlace de WhatsApp con el texto ya escrito. El teléfono es opcional (sin él, WhatsApp pide elegir el contacto). */
 export function enlaceWhatsApp(texto, telefono = '') {
-  const numero = String(telefono).replace(/\D/g, '');
-  return `https://wa.me/${numero}?text=${encodeURIComponent(texto)}`;
+  return `https://wa.me/${numeroWhatsApp(telefono)}?text=${encodeURIComponent(texto)}`;
+}
+
+/**
+ * Celular argentino al formato de WhatsApp (549 + área + número), como lo escribe la gente:
+ * "11 5555-1234", "011 15 5555-1234", "0351 15 555-1234", "+54 9 11 5555 1234".
+ * Un número que no se puede interpretar sin adivinar se deja como vino si parece internacional, o vacío.
+ */
+export function numeroWhatsApp(telefono) {
+  const crudo = String(telefono).replace(/\D/g, '');
+  let d = crudo;
+  if (d.startsWith('54')) { d = d.slice(2); if (d.startsWith('9')) d = d.slice(1); }
+  else if (d.startsWith('0')) d = d.slice(1);
+  // Con el "15" quedan 12 dígitos: se saca probando áreas de 2, 3 y 4 cifras.
+  if (d.length === 12) {
+    for (const a of [2, 3, 4]) if (d.slice(a, a + 2) === '15') { d = d.slice(0, a) + d.slice(a + 2); break; }
+  }
+  if (d.length === 10 && !d.startsWith('0') && !d.startsWith('15')) return `549${d}`;
+  return crudo.length >= 11 ? crudo : '';
 }
 
 // --- Caja ---------------------------------------------------------------

@@ -1,7 +1,7 @@
 // Service worker: guarda la app para que abra y funcione sin internet.
 // Cambiá VERSION cada vez que publiques cambios, así los dispositivos descargan la versión nueva.
 
-const VERSION = 'gondola-v1';
+const VERSION = 'gondola-v2';
 const ARCHIVOS = [
   './',
   './index.html',

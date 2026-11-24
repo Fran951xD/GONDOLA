@@ -72,6 +72,13 @@ test('textoDelPedido y enlace de WhatsApp', () => {
   assert.match(texto, /• 2,5 kg × Queso/);
   assert.doesNotMatch(texto, /Nada/);
   assert.equal(enlaceWhatsApp('hola mundo', '+54 9 11 5555-1234'), 'https://wa.me/5491155551234?text=hola%20mundo');
+  // Como lo escribe la gente en Argentina: sin 549, con 0 y con 15.
+  for (const tel of ['11 5555-1234', '011 15 5555-1234', '1155551234']) {
+    assert.equal(enlaceWhatsApp('x', tel), 'https://wa.me/5491155551234?text=x', tel);
+  }
+  assert.equal(enlaceWhatsApp('x', '0351 15 555-1234'), 'https://wa.me/5493515551234?text=x');
+  assert.equal(enlaceWhatsApp('x', ''), 'https://wa.me/?text=x');
+  assert.equal(enlaceWhatsApp('x', '123'), 'https://wa.me/?text=x');
 });
 
 test('totalTicket, vuelto y montos sugeridos', () => {
