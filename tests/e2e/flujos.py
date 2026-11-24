@@ -14,6 +14,8 @@ TMP = tempfile.mkdtemp()
 import asyncio, json
 from playwright.async_api import async_playwright
 import os
+import sys
+sys.stdout.reconfigure(encoding='utf-8')  # consolas de Windows (cp1252) no imprimen − ni ✓
 B=os.environ.get("GONDOLA_URL","http://localhost:5173/")
 async def main():
     async with async_playwright() as p:
