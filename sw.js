@@ -1,7 +1,7 @@
 // Service worker: guarda la app para que abra y funcione sin internet.
 // Cambiá VERSION cada vez que publiques cambios, así los dispositivos descargan la versión nueva.
 
-const VERSION = 'gondola-v2';
+const VERSION = 'gondola-v3';
 const ARCHIVOS = [
   './',
   './index.html',
@@ -22,7 +22,7 @@ const ARCHIVOS = [
   './js/vistas/stock-rapido.js',
   './js/vistas/vender.js',
   './js/vistas/ventas.js',
-  './fonts/adventor-bold.woff',
+  './fonts/inter-display-semibold.woff',
   './fonts/inter-regular.woff',
   './fonts/inter-medium.woff',
   './fonts/inter-semibold.woff',

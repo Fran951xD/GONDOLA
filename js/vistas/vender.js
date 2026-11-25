@@ -191,7 +191,8 @@ function renderTicket({ resaltar = null } = {}) {
   }
   const cobrar = $('#ticket-cobrar');
   cobrar.disabled = !estado.items.length;
-  cobrar.textContent = estado.items.length ? `Cobrar ${plata(total)}` : 'Cobrar';
+  // el monto va en la etiqueta amarilla; el nombre accesible sigue siendo "Cobrar $ X"
+  cobrar.replaceChildren(...(estado.items.length ? ['Cobrar ', el('span', { class: 'etiqueta-precio' }, plata(total))] : ['Cobrar']));
 }
 
 async function cobrar() {

@@ -65,7 +65,7 @@ function renderLista() {
     ? [...porDia.entries()].map(([dia, lista]) => el('section', { class: 'dia-ventas' },
       el('h2', { class: 'titulo-chico' }, fechaLarga(dia), el('span', {}, plataRedonda(lista.filter((v) => !v.anulada).reduce((t, v) => t + v.total, 0)))),
       el('ol', { class: 'lista-ventas' }, lista.map(ticket))))
-    : [el('p', { class: 'vacio' }, periodo === 'hoy' ? 'Todavía no hay ventas hoy. ' : 'No hay ventas en este período. ', el('a', { href: '#/vender' }, 'Ir a la caja'))]));
+    : [el('p', { class: 'vacio vacio--grande' }, periodo === 'hoy' ? 'Todavía no hay ventas hoy. ' : 'No hay ventas en este período. ', el('a', { href: '#/vender' }, 'Ir a la caja'))]));
 }
 
 export function render(contenedor) {
