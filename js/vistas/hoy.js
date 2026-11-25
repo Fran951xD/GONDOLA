@@ -42,7 +42,7 @@ function comparacion(actual, anterior) {
   if (!(anterior > 0)) return null;
   const cambio = (actual / anterior - 1) * 100;
   const signo = cambio > 0.5 ? 'más' : cambio < -0.5 ? 'menos' : null;
-  return el('p', { class: `cifra__detalle cifra__variacion ${signo ? `cifra__variacion--${signo === 'más' ? 'sube' : 'baja'}` : ''}` }, signo ?`${porcentaje(Math.abs(cambio))} ${signo} que el mismo día de la semana pasada a esta hora` : 'Igual que la semana pasada a esta hora');
+  return el('p', { class: `cifra__detalle cifra__variacion ${signo ? `cifra__variacion--${signo === 'más' ? 'sube' : 'baja'}` : ''}` }, signo ? `${porcentaje(Math.abs(cambio))} ${signo} que el mismo día de la semana pasada a esta hora` : 'Igual que la semana pasada a esta hora');
 }
 
 export function render(contenedor) {
