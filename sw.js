@@ -22,7 +22,7 @@ const ARCHIVOS = [
   './js/vistas/stock-rapido.js',
   './js/vistas/vender.js',
   './js/vistas/ventas.js',
-  './fonts/adventor-bold.woff',
+  './fonts/inter-display-semibold.woff',
   './fonts/inter-regular.woff',
   './fonts/inter-medium.woff',
   './fonts/inter-semibold.woff',
