@@ -15,7 +15,7 @@ Que Góndola se vea como un producto comercial (vara: Linear, Stripe Dashboard, 
 | Grafito | `#1b1c20` | texto, menú lateral, botón principal |
 | Papel | `#f6f6f4` / `#ffffff` | fondo y superficies |
 | Gris | `#5b5e66` / `#e6e6e3` | texto secundario, bordes |
-| Etiqueta | `#ffd43b` (canto `#e8b500`) | **solo** isotipo, precios destacados, ítem activo, "hoy" en el gráfico, monto del botón Cobrar |
+| Etiqueta | `#ffd43b` (canto `#e8b500`) | **solo** isotipo, precios destacados, ítem activo, "hoy" en el gráfico, monto del botón Cobrar; además, el contorno de foco sobre superficies grafito (11,9:1), por accesibilidad |
 | Estados | rojo `#c8322b`, ámbar `#9a5300`, verde `#1e7f4f` | siempre con texto o ícono |
 | Medios de pago | paleta actual | validada para daltonismo, no se toca |
 
