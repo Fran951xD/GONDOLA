@@ -131,7 +131,8 @@ export function render(contenedor) {
       ? el('div', { class: 'lista-grupos' }, grupos.map(grupoProveedor))
       : el('div', { class: 'vacio vacio--grande' },
         el('p', {}, el('strong', {}, 'No falta nada.')),
-        el('p', {}, 'Cuando un producto llegue a su mínimo, aparece acá agrupado por proveedor. Para que funcione, cargá el mínimo de cada producto.')),
+        el('p', {}, 'Cuando un producto llegue a su mínimo, aparece acá agrupado por proveedor. Para que funcione, cargá el mínimo de cada producto.'),
+        el('a', { href: '#/productos', class: 'boton boton--secundario' }, 'Ver productos')),
   );
 }
 

@@ -17,11 +17,12 @@ function graficoDias(serie) {
   const hoy = inicioDeHoy();
   return el('figure', { class: 'grafico-dias' },
     el('figcaption', { class: 'titulo-chico' }, 'Ventas de los últimos 14 días'),
+    el('span', { class: 'grafico-dias__max', 'aria-hidden': 'true' }, `máx. ${plataRedonda(maximo)}`),
     el('ol', { class: 'grafico-dias__barras' }, serie.map((d) => {
       const dia = new Date(d.fecha);
       const esHoy = d.fecha === hoy;
       return el('li', { class: `grafico-dias__dia ${esHoy ? 'es-hoy' : ''} ${[0, 6].includes(dia.getDay()) ? 'es-finde' : ''}` },
-        el('span', { class: 'grafico-dias__barra', style: { '--alto': `${Math.max(2, (d.total / maximo) * 100)}%` }, tabindex: '0', title: `${fechaLarga(d.fecha)}: ${plataRedonda(d.total)}` },
+        el('span', { class: 'grafico-dias__barra', style: { '--alto': `${Math.max(2, (d.total / maximo) * 100)}%` }, tabindex: '0', 'data-valor': `${esHoy ? 'Hoy' : fechaCorta(d.fecha)}: ${plataRedonda(d.total)}` },
           el('span', { class: 'solo-lectores' }, `${fechaLarga(d.fecha)}: ${plataRedonda(d.total)}`)),
         el('span', { class: 'grafico-dias__etiqueta', 'aria-hidden': 'true' }, esHoy ? 'Hoy' : fechaCorta(d.fecha)));
     })));
@@ -41,7 +42,7 @@ function comparacion(actual, anterior) {
   if (!(anterior > 0)) return null;
   const cambio = (actual / anterior - 1) * 100;
   const signo = cambio > 0.5 ? 'más' : cambio < -0.5 ? 'menos' : null;
-  return el('p', { class: 'cifra__detalle' }, signo ? `${porcentaje(Math.abs(cambio))} ${signo} que el mismo día de la semana pasada a esta hora` : 'Igual que la semana pasada a esta hora');
+  return el('p', { class: `cifra__detalle cifra__variacion ${signo ? `cifra__variacion--${signo === 'más' ? 'sube' : 'baja'}` : ''}` }, signo ?`${porcentaje(Math.abs(cambio))} ${signo} que el mismo día de la semana pasada a esta hora` : 'Igual que la semana pasada a esta hora');
 }
 
 export function render(contenedor) {

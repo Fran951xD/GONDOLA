@@ -148,7 +148,7 @@ export function render(contenedor, params) {
           el('th', { scope: 'col', class: 'num col-opcional' }, 'Ganancia'),
           el('th', { scope: 'col' }, el('span', { class: 'solo-lectores' }, 'Acciones')))),
         el('tbody', { id: 'productos-filas' }))),
-    el('p', { id: 'productos-vacio', class: 'vacio', hidden: true }),
+    el('p', { id: 'productos-vacio', class: 'vacio vacio--grande', hidden: true }),
   );
   renderLista();
 }
