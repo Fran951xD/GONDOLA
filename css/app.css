@@ -654,9 +654,10 @@ input::placeholder { color: var(--tinta-4); }
 
   .cabecera-vista { align-items: flex-start; }
   .cabecera-vista > .boton { width: 100%; }
-  .boton { min-height: var(--toque); }
-  .boton--chico { min-height: 40px; }
-  .chips button, .segmentado button { min-height: 40px; }
+  /* nada tocable por debajo de 44 px en pantallas táctiles */
+  .boton, .boton--chico, .chips button, .segmentado button { min-height: var(--toque); }
+  .campo-tabla, .tabla--formulario input { min-height: var(--toque) !important; }
+  .detalles summary { display: flex; align-items: center; min-height: var(--toque); }
   .fila-campos, .fila-campos--3, .fila-campos--4 { grid-template-columns: 1fr; }
   .tablero { grid-template-columns: 1fr; }
   .panel--ancho { grid-column: auto; }
