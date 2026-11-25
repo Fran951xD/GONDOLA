@@ -84,6 +84,19 @@ Cada tarea deja la app funcionando, se verifica con capturas de Playwright (1440
 | — | **Control 2** | unitarios + e2e + Lighthouse + recorrido 390/768/1024/1440 | |
 | 8 | Cierre | `VERSION`, capturas de `docs/`, README, cabecera del CSS, revisión | varios |
 
+## Registro de performance
+
+Lighthouse 12 en celu emulado, misma máquina y mismo script en cada medición. La variación entre corridas es de ±1 punto.
+
+| Medición | bienvenida | hoy | vender | productos | LCP | Peso | Veredicto |
+|---|---|---|---|---|---|---|---|
+| `main` (línea base) | 94 | 94 | 94 | 95 | 2,9 s | 280 KiB | — |
+| Rediseño, corrida 1 | 93 | 92 | 92 | 92 | 3,0 s | 309 KiB | — |
+| Rediseño, corrida 2 | 93 | 93 | 93 | 93 | 3,0 s | 309 KiB | dentro de CONSTRAINTS (≥ 90, ≤ 2 puntos abajo) |
+| Sin `preload` de Inter Display | 91 | 91 | 93 | 92 | 3,2 s | 309 KiB | **revertido**: el título grande usa esa fuente y llega más tarde |
+
+El costo del rediseño es la fuente Inter Display (+26 KiB, ~1 punto). Accesibilidad sigue en 100 en las cuatro vistas.
+
 ## Riesgos
 
 | Riesgo | Mitigación |
